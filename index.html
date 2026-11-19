@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reserva tu cita · Body Sport Nutrición</title>
+<meta name="description" content="Reserva online tu cita en Body Sport Nutrición: dietética, nutrición deportiva y entrenamiento personalizado. Sin registros.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#E6E8EA;--card:#F7F7F8;--tan:#FFD9B8;--brown:#C2540A;--dark:#2B2F33;--ok:#2f7a45;--err:#b3382c;--line:#C9CDD2}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--dark);font:16px/1.5 'Open Sans',system-ui,-apple-system,Segoe UI,sans-serif}
+.wrap{max-width:640px;margin:0 auto;padding:0 16px 48px}
+.top{text-align:center;padding:28px 16px 6px}
+.b1{display:block;font-family:'Lobster Two',cursive;font-style:italic;font-weight:700;font-size:46px;line-height:1}
+.b2{display:block;font-family:'Lobster Two',cursive;font-style:italic;font-weight:700;font-size:26px;color:var(--brown);margin-top:2px}
+.tag{margin:10px 0 0;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:13px}
+.steps{list-style:none;display:flex;gap:6px;padding:0;margin:20px 0 18px}
+.steps li{flex:1;text-align:center;font-size:12px;font-weight:700;padding:7px 4px;border-radius:999px;background:var(--line);color:#4B5056}
+.steps li.on{background:var(--brown);color:#fff}
+.steps li.done{background:var(--tan);color:var(--dark)}
+h2{font-size:19px;margin:0 0 12px}
+.grp{margin:22px 0 8px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--brown)}
+.note{font-size:13px;color:#555B62;margin:6px 0 0}
+.svc{display:block;width:100%;text-align:left;background:var(--card);border:2px solid var(--line);border-radius:14px;padding:14px 16px;margin:0 0 10px;font:inherit;color:inherit;cursor:pointer}
+.svc:hover,.svc:focus-visible{border-color:var(--brown);outline:none}
+.svc b{display:block;font-size:17px}
+.svc p{margin:4px 0 8px;font-size:14px;color:#555B62}
+.meta{display:flex;justify-content:space-between;font-weight:700;font-size:14px;color:var(--brown)}
+.days{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 12px;scroll-snap-type:x proximity}
+.day{flex:0 0 auto;min-width:64px;scroll-snap-align:start;text-align:center;background:var(--card);border:2px solid var(--line);border-radius:12px;padding:8px 6px;font:inherit;color:inherit;cursor:pointer}
+.day small{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.04em}
+.day strong{display:block;font-size:20px;line-height:1.2}
+.day:disabled{opacity:.4;cursor:not-allowed;background:transparent}
+.day.sel{background:var(--brown);border-color:var(--brown);color:#fff}
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:8px;margin:6px 0 14px}
+.slot{padding:11px 0;text-align:center;font:inherit;font-weight:700;background:var(--card);border:2px solid var(--line);border-radius:10px;cursor:pointer;color:inherit}
+.slot:hover,.slot:focus-visible{border-color:var(--brown);background:var(--brown);color:#fff;outline:none}
+.sub{font-size:13px;font-weight:700;color:var(--brown);margin:14px 0 2px}
+.box{background:var(--card);border:2px solid var(--line);border-radius:14px;padding:14px 16px;margin:0 0 16px}
+.box dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:15px}
+.box dt{color:var(--brown);font-weight:700}.box dd{margin:0}
+label{display:block;font-weight:700;font-size:14px;margin:14px 0 4px}
+input[type=text],input[type=tel],input[type=email],textarea{width:100%;font:inherit;padding:11px 12px;border:2px solid var(--line);border-radius:10px;background:#fff;color:var(--dark)}
+input:focus,textarea:focus{outline:none;border-color:var(--brown)}
+textarea{min-height:84px;resize:vertical}
+.hint{font-size:12px;color:#555B62;margin:3px 0 0;font-weight:400}
+.chk{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:13px;margin-top:16px}
+.chk input{margin-top:3px;width:18px;height:18px;flex:none;accent-color:var(--brown)}
+details{font-size:12px;margin-top:6px;color:#555B62}summary{cursor:pointer;color:var(--brown);font-weight:700}
+.btn{display:block;width:100%;margin-top:18px;padding:14px;border:0;border-radius:12px;background:var(--brown);color:#fff;font:inherit;font-weight:700;font-size:17px;cursor:pointer}
+.btn:disabled{opacity:.6;cursor:wait}
+.btn.alt{background:transparent;color:var(--brown);border:2px solid var(--brown);margin-top:10px;text-align:center;text-decoration:none;font-size:15px}
+.back{background:none;border:0;color:var(--brown);font:inherit;font-weight:700;padding:6px 0;margin:0 0 8px;cursor:pointer}
+.msg{padding:11px 14px;border-radius:10px;font-size:14px;margin:0 0 14px}
+.msg.err{background:#fbe3df;color:var(--err);border:1px solid #e9b4ac}
+.msg.warn{background:#fff1c9;color:#6b4e00;border:1px solid #e8d08a}
+.ok{text-align:center;margin:8px 0 14px}
+.ok .tick{width:58px;height:58px;border-radius:50%;background:var(--ok);color:#fff;font-size:34px;line-height:58px;margin:0 auto 8px}
+.empty{padding:16px;text-align:center;color:#555B62}
+footer{text-align:center;font-size:13px;color:#555B62;margin-top:30px;line-height:1.7}
+footer a{color:var(--brown);font-weight:700}
+.hp{position:absolute;left:-9999px;height:0;overflow:hidden}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <span class="b1">Body Sport</span><span class="b2">Nutrición</span>
+  <p class="tag">Reserva tu cita online</p>
+</header>
+<noscript><p class="msg err">Necesitas activar JavaScript para reservar. También puedes llamarnos al 886 21 22 72.</p></noscript>
+<main>
+  <div id="demo" class="msg warn" hidden><b>Modo demostración.</b> Las reservas aún no se envían: falta conectar la hoja de Google (ver LEEME.md).</div>
+  <ol class="steps" id="steps"><li>1 · Servicio</li><li>2 · Día y hora</li><li>3 · Tus datos</li></ol>
+
+  <section id="s1"></section>
+
+  <section id="s2" hidden>
+    <button class="back" type="button" id="back2">← Cambiar de servicio</button>
+    <h2 id="s2title"></h2>
+    <div id="s2err" class="msg err" hidden></div>
+    <div id="days" class="days" role="listbox" aria-label="Días disponibles"></div>
+    <div id="slots" aria-live="polite"></div>
+  </section>
+
+  <section id="s3" hidden>
+    <button class="back" type="button" id="back3">← Cambiar de hora</button>
+    <h2>Tus datos</h2>
+    <div class="box"><dl id="sum"></dl></div>
+    <form id="form" novalidate>
+      <div id="ferr" class="msg err" hidden role="alert"></div>
+      <label for="name">Nombre y apellidos</label>
+      <input id="name" type="text" autocomplete="name" maxlength="80" required>
+      <label for="phone">Teléfono</label>
+      <input id="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" required>
+      <label for="email">Correo electrónico</label>
+      <input id="email" type="email" autocomplete="email" maxlength="120" required>
+      <p class="hint">Te enviaremos aquí la confirmación de la cita.</p>
+      <label for="notes">Motivo o comentarios (opcional)</label>
+      <textarea id="notes" maxlength="500"></textarea>
+      <p class="hint">No hace falta que cuentes datos de salud: lo vemos juntos en la consulta.</p>
+      <div class="hp" aria-hidden="true"><label>Web <input id="website" type="text" tabindex="-1" autocomplete="off"></label></div>
+      <label class="chk"><input id="consent" type="checkbox"><span>He leído y acepto el tratamiento de mis datos para gestionar mi cita.
+        <details><summary>Información sobre protección de datos</summary>
+        <p><b>Responsable:</b> Body Sport Nutrición (bodysportnutricion@gmail.com). <b>Finalidad:</b> gestionar tu reserva y comunicarnos contigo sobre ella. <b>Conservación:</b> mientras sea necesario para prestar el servicio y cumplir obligaciones legales. <b>Derechos:</b> acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo a nuestro correo.</p></details></span></label>
+      <button class="btn" id="submit" type="submit">Confirmar reserva</button>
+    </form>
+  </section>
+
+  <section id="s4" hidden></section>
+</main>
+<footer>
+  <div><b>Body Sport Nutrición</b><br>C/ Padre Gaite 1 bajo<br>
+  <a href="tel:886212272">886 21 22 72</a> · <a href="mailto:bodysportnutricion@gmail.com">bodysportnutricion@gmail.com</a></div>
+</footer>
+</div>
+
+<script>
+const FAB=[["09:30","14:30"],["16:00","19:00"]], JUL=[["10:30","13:30"],["18:00","21:30"]];
+const wk=b=>({1:b,2:b,3:b,4:b,5:b});
+
+/* ============ CONFIGURACIÓN (lo único que normalmente hay que tocar) ============ */
+const CONFIG={
+  APPS_SCRIPT_URL:"https://script.google.com/macros/s/AKfycbxnqniRnKSVk0HzmvLZsmvAwdn5695jMfUSZlNm-Re_TkuWUaVmDwWQk2nGQFMOwJ17/exec",          // ← pega aquí la URL de la aplicación web de Google Apps Script
+  NAME:"Body Sport Nutrición", ADDRESS:"C/ Padre Gaite 1 bajo",
+  DAYS_AHEAD:28,               // cuántos días hacia delante se puede reservar
+  MIN_NOTICE_HOURS:12,         // antelación mínima
+  STEP_MIN:30,                 // las citas empiezan cada 30 minutos
+  CLOSED_DATES:[],             // días cerrados, p. ej. ["2026-12-25","2027-01-01"]
+  PROS:{
+    fabian:{name:"Fabián",schedule:wk(FAB)},   // lunes a viernes
+    julio:{name:"Julio",schedule:Object.assign(wk(JUL),{6:[["10:00","14:00"]]})}  // lunes a viernes + sábados de 10 a 14
+  },
+  SERVICES:[
+    {id:"inicial",pro:"fabian",name:"Entrevista personal y evaluación inicial",min:45,dur:"30-45 min",price:"50 €",
+     desc:"Primera visita: conocemos tus necesidades y objetivos, hacemos las mediciones corporales y te preparamos tu plan dietético personalizado, con revisión a los 15 días."},
+    {id:"revision",pro:"fabian",name:"Revisión periódica",min:30,dur:"30 min",price:"30 €",
+     desc:"Cada 15-20 días revisamos tu evolución y renovamos el plan dietético si hace falta."},
+    {id:"asesoramiento",pro:"julio",name:"Asesoramiento nutricional",min:30,dur:"30 min",price:"25 €",
+     desc:"Plan nutricional por gramajes, adaptado a tus necesidades y horarios. Revisión recomendable cada 4-6 semanas."},
+    {id:"entrenamiento",pro:"julio",name:"Entrenamiento personalizado",min:30,dur:"30 min",price:"25 €",
+     desc:"Entrenamiento a tu medida, en casa o en el gimnasio, con cambio de tabla cada 4-6 semanas."},
+    {id:"competicion",pro:"julio",name:"Preparación para competidores fitness",min:45,dur:"45 min (primera cita)",price:"100 €/mes",
+     desc:"Seguimiento integral de entrenamiento, alimentación y suplementación, y corrección de poses para llegar en su mejor punto a la competición."}
+  ]
+};
+
+/* ============ LÓGICA ============ */
+const pad=n=>String(n).padStart(2,"0");
+const toMin=h=>{const [a,b]=h.split(":").map(Number);return a*60+b};
+const toHM=m=>pad(Math.floor(m/60))+":"+pad(m%60);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function madridNow(){
+  const f=new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/Madrid",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",hourCycle:"h23"});
+  const o={};f.formatToParts(new Date()).forEach(p=>o[p.type]=p.value);
+  return {date:`${o.year}-${o.month}-${o.day}`,min:Number(o.hour)*60+Number(o.minute)};
+}
+const utcDay=s=>{const [y,m,d]=s.split("-").map(Number);return Date.UTC(y,m-1,d)};
+const addDays=(s,n)=>{const d=new Date(utcDay(s)+n*864e5);return `${d.getUTCFullYear()}-${pad(d.getUTCMonth()+1)}-${pad(d.getUTCDate())}`};
+const dow=s=>new Date(utcDay(s)).getUTCDay();
+const wall=(s,min)=>utcDay(s)/60000+min;
+const fmtDate=(s,o)=>new Date(utcDay(s)).toLocaleDateString("es-ES",Object.assign({timeZone:"UTC"},o));
+
+function slotsFor(svc,date,busy,now){
+  now=now||madridNow();
+  if(CONFIG.CLOSED_DATES.includes(date)) return [];
+  const blocks=CONFIG.PROS[svc.pro].schedule[dow(date)]||[];
+  const limit=wall(now.date,now.min)+CONFIG.MIN_NOTICE_HOURS*60;
+  const taken=busy.filter(b=>b.prof===svc.pro&&b.date===date).map(b=>[toMin(b.start),toMin(b.end)]);
+  const out=[];
+  for(const [a,b] of blocks){
+    for(let t=toMin(a);t+svc.min<=toMin(b);t+=CONFIG.STEP_MIN){
+      if(wall(date,t)<limit) continue;
+      if(taken.some(([s,e])=>t<e&&t+svc.min>s)) continue;
+      out.push(toHM(t));
+    }
+  }
+  return out;
+}
+/*__DOM__*/
+
+/* ============ INTERFAZ ============ */
+const $=s=>document.querySelector(s);
+const state={service:null,date:null,time:null,busy:[],sending:false};
+const DEMO=!CONFIG.APPS_SCRIPT_URL;
+
+function ls(get,val){try{return get?JSON.parse(localStorage.getItem("bs_demo")||"[]"):localStorage.setItem("bs_demo",JSON.stringify(val))}catch(e){return []}}
+
+async function loadBusy(){
+  if(DEMO){state.busy=ls(true);return true}
+  const today=madridNow().date;
+  try{
+    const r=await fetch(`${CONFIG.APPS_SCRIPT_URL}?action=busy&from=${today}&to=${addDays(today,CONFIG.DAYS_AHEAD)}`);
+    const j=await r.json();state.busy=j.busy||[];return true;
+  }catch(e){return false}
+}
+
+function go(n){
+  [1,2,3,4].forEach(i=>$("#s"+i).hidden=i!==n);
+  [...$("#steps").children].forEach((li,i)=>{li.className=i+1===n?"on":(i+1<n?"done":"")});
+  $("#steps").hidden=n===4;
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function renderServices(){
+  let h="";
+  for(const [pid,pro] of Object.entries(CONFIG.PROS)){
+    h+=`<div class="grp">Con ${esc(pro.name)}</div>`;
+    for(const s of CONFIG.SERVICES.filter(x=>x.pro===pid)){
+      h+=`<button type="button" class="svc" data-id="${s.id}"><b>${esc(s.name)}</b><p>${esc(s.desc)}</p><div class="meta"><span>${esc(s.dur)}</span><span>${esc(s.price)}</span></div></button>`;
+    }
+    if(pid==="fabian") h+=`<p class="note">Las dietas incluyen recetario detallado, lista de la compra y plan de suplementación, con contacto continuo para dudas.</p>`;
+  }
+  $("#s1").innerHTML=`<h2>¿Qué necesitas?</h2>`+h;
+  $("#s1").querySelectorAll(".svc").forEach(b=>b.onclick=()=>pickService(b.dataset.id));
+}
+
+async function pickService(id){
+  state.service=CONFIG.SERVICES.find(s=>s.id===id);state.date=null;state.time=null;
+  $("#s2title").textContent=`${state.service.name} · con ${CONFIG.PROS[state.service.pro].name}`;
+  $("#s2err").hidden=true;$("#days").innerHTML="";$("#slots").innerHTML=`<p class="empty">Cargando huecos libres…</p>`;
+  go(2);
+  const ok=await loadBusy();
+  if(!ok){$("#s2err").hidden=false;$("#s2err").textContent="No hemos podido consultar la agenda. Inténtalo de nuevo o llámanos al 886 21 22 72.";$("#slots").innerHTML="";return}
+  renderDays();
+}
+
+function renderDays(){
+  const today=madridNow().date;let h="",any=false;
+  for(let i=0;i<=CONFIG.DAYS_AHEAD;i++){
+    const d=addDays(today,i),n=slotsFor(state.service,d,state.busy).length;
+    if(n)any=true;
+    h+=`<button type="button" class="day${d===state.date?" sel":""}" data-d="${d}" ${n?"":"disabled"} aria-label="${esc(fmtDate(d,{weekday:"long",day:"numeric",month:"long"}))}"><small>${esc(fmtDate(d,{weekday:"short"}).replace(".",""))}</small><strong>${Number(d.slice(8))}</strong><small>${esc(fmtDate(d,{month:"short"}).replace(".",""))}</small></button>`;
+  }
+  $("#days").innerHTML=h;
+  $("#slots").innerHTML=any?`<p class="empty">Elige un día</p>`:`<p class="empty">Ahora mismo no quedan huecos libres. Llámanos al <a href="tel:886212272">886 21 22 72</a> y te buscamos uno.</p>`;
+  $("#days").querySelectorAll(".day").forEach(b=>b.onclick=()=>{state.date=b.dataset.d;renderDays();renderSlots();$("#slots").scrollIntoView({behavior:"smooth",block:"nearest"})});
+  if(state.date)renderSlots();
+}
+
+function renderSlots(){
+  const list=slotsFor(state.service,state.date,state.busy);
+  const part=(t,arr)=>arr.length?`<div class="sub">${t}</div><div class="slots">${arr.map(x=>`<button type="button" class="slot" data-t="${x}">${x}</button>`).join("")}</div>`:"";
+  $("#slots").innerHTML=`<h2 style="margin-top:6px">${esc(fmtDate(state.date,{weekday:"long",day:"numeric",month:"long"}))}</h2>`+
+    part("Mañana",list.filter(x=>toMin(x)<15*60))+part("Tarde",list.filter(x=>toMin(x)>=15*60));
+  $("#slots").querySelectorAll(".slot").forEach(b=>b.onclick=()=>{state.time=b.dataset.t;renderSummary();go(3)});
+}
+
+function renderSummary(){
+  const s=state.service;
+  $("#sum").innerHTML=`<dt>Servicio</dt><dd>${esc(s.name)}</dd><dt>Con</dt><dd>${esc(CONFIG.PROS[s.pro].name)}</dd><dt>Día</dt><dd>${esc(fmtDate(state.date,{weekday:"long",day:"numeric",month:"long",year:"numeric"}))}</dd><dt>Hora</dt><dd>${state.time} (${esc(s.dur)})</dd><dt>Precio</dt><dd>${esc(s.price)}</dd>`;
+  $("#ferr").hidden=true;
+}
+
+function ferr(t){const e=$("#ferr");e.textContent=t;e.hidden=false;e.scrollIntoView({behavior:"smooth",block:"center"})}
+
+async function submit(ev){
+  ev.preventDefault();if(state.sending)return;
+  const v={name:$("#name").value.trim(),phone:$("#phone").value.trim(),email:$("#email").value.trim(),notes:$("#notes").value.trim()};
+  if(v.name.length<2)return ferr("Escribe tu nombre y apellidos.");
+  if(!/^[+\d][\d\s().-]{7,18}$/.test(v.phone))return ferr("Revisa el teléfono: solo números, espacios y +.");
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.email))return ferr("Revisa el correo electrónico.");
+  if(!$("#consent").checked)return ferr("Para reservar tienes que aceptar el tratamiento de datos.");
+  const s=state.service,btn=$("#submit");
+  const payload=Object.assign({action:"book",service:s.id,date:state.date,start:state.time,consent:true,website:$("#website").value},v);
+  state.sending=true;btn.disabled=true;btn.textContent="Reservando…";$("#ferr").hidden=true;
+  try{
+    let res;
+    if(DEMO){
+      const arr=ls(true);
+      if(!slotsFor(s,state.date,arr).includes(state.time))res={ok:false,error:"taken"};
+      else{arr.push({prof:s.pro,date:state.date,start:state.time,end:toHM(toMin(state.time)+s.min)});ls(false,arr);res={ok:true}}
+    }else{
+      const r=await fetch(CONFIG.APPS_SCRIPT_URL,{method:"POST",body:JSON.stringify(payload)});
+      res=await r.json();
+    }
+    if(res.ok){renderDone(v);go(4)}
+    else if(res.error==="taken"){
+      await loadBusy();state.time=null;renderDays();go(2);
+      $("#s2err").hidden=false;$("#s2err").textContent="Ese hueco acaba de ocuparse. Elige otro, por favor.";
+    }else ferr(res.error==="invalid"?"Revisa los datos e inténtalo de nuevo.":"No hemos podido guardar la reserva. Inténtalo de nuevo o llámanos al 886 21 22 72.");
+  }catch(e){ferr("No hemos podido conectar. Inténtalo de nuevo o llámanos al 886 21 22 72.")}
+  finally{state.sending=false;btn.disabled=false;btn.textContent="Confirmar reserva"}
+}
+
+function renderDone(v){
+  const s=state.service,end=toHM(toMin(state.time)+s.min),d=state.date.replace(/-/g,"");
+  const st=state.time.replace(":","")+"00",en=end.replace(":","")+"00",title=`${s.name} · ${CONFIG.NAME}`;
+  const gcal=`https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${d}T${st}/${d}T${en}&ctz=Europe%2FMadrid&location=${encodeURIComponent(CONFIG.ADDRESS)}`;
+  const ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Body Sport//Reservas//ES","BEGIN:VEVENT","UID:"+Date.now()+"@bodysport","DTSTAMP:"+new Date().toISOString().replace(/[-:]|\.\d{3}/g,""),
+    `DTSTART:${d}T${st}`,`DTEND:${d}T${en}`,"SUMMARY:"+title,"LOCATION:"+CONFIG.ADDRESS,"END:VEVENT","END:VCALENDAR"].join("\r\n");
+  $("#s4").innerHTML=`<div class="ok"><div class="tick" aria-hidden="true">✓</div><h2>¡Reserva confirmada!</h2>
+    <p>${DEMO?"(Modo demostración: no se ha enviado ningún correo.)":`Te hemos enviado la confirmación a <b>${esc(v.email)}</b>.`}</p></div>
+    <div class="box"><dl><dt>Servicio</dt><dd>${esc(s.name)}</dd><dt>Con</dt><dd>${esc(CONFIG.PROS[s.pro].name)}</dd><dt>Día</dt><dd>${esc(fmtDate(state.date,{weekday:"long",day:"numeric",month:"long",year:"numeric"}))}</dd><dt>Hora</dt><dd>${state.time}</dd><dt>Dónde</dt><dd>${esc(CONFIG.ADDRESS)}</dd></dl></div>
+    <a class="btn" href="${gcal}" target="_blank" rel="noopener">Añadir a Google Calendar</a>
+    <a class="btn alt" download="cita-body-sport.ics" href="data:text/calendar;charset=utf-8,${encodeURIComponent(ics)}">Descargar para otro calendario (.ics)</a>
+    <p class="note" style="text-align:center;margin-top:16px">¿Necesitas cambiarla o anularla? Llámanos al <a href="tel:886212272">886 21 22 72</a>.</p>`;
+}
+
+$("#back2").onclick=()=>go(1);
+$("#back3").onclick=()=>go(2);
+$("#form").addEventListener("submit",submit);
+$("#demo").hidden=!DEMO;
+renderServices();
+const pre=new URLSearchParams(location.search).get("s");
+if(pre&&CONFIG.SERVICES.some(x=>x.id===pre))pickService(pre);
+</script>
+</body>
+</html>
